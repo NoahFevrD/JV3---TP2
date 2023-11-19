@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class LevelManager : MonoBehaviour
     [Space(5)]
 
     [SerializeField] int waitAfterLoad = 500;
+
+    [Header("Loading Settings")]
+    [SerializeField] GameObject loadingCanvas;
+    [SerializeField] Slider loadingBar;
+    [Space(5)]
+
+    [SerializeField] float uiFadeDuration;
 
     // -------------------------
     // Functions
@@ -44,19 +52,19 @@ public class LevelManager : MonoBehaviour
         // Set Variables
         var scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
-        // loadingCanvas.DOFade(1, uiFadeDuration);
+        loadingCanvas.GetComponent<CanvasGroup>().DOFade(1, uiFadeDuration);
 
         do
         {
             await Task.Delay(waitAfterLoad);
-            // Slider.fillAmount = scene.progress;
+            loadingBar.value = scene.progress;
         }
 
         while(scene.progress > 0.9f);
 
         // Load Next Scene
         scene.allowSceneActivation = true;
-        // loadingCanvas.DOFade(0, uiFadeDuration);
+        loadingCanvas.GetComponent<CanvasGroup>().DOFade(0, uiFadeDuration);
     }
 
     public void QuitGame()
