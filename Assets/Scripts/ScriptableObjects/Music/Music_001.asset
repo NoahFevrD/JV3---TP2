@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Music_001
   m_EditorClassIdentifier: 
   musicName: Swing Out
-  musicIntro: {fileID: 8300000, guid: 8364c7f41752cdc4a91d4c2963d1a9e6, type: 3}
-  musicLoop: {fileID: 8300000, guid: b5974318b49c4d249b01b799899c2068, type: 3}
+  musicIntro: {fileID: 8300000, guid: 0abc4893e52c2354cb8fb7c1d3d2e60d, type: 3}
+  musicLoop: {fileID: 8300000, guid: b06a3106084781444947ed2da562161a, type: 3}
   loop: 1

@@ -37,8 +37,6 @@ public class SoundManager : MonoBehaviour
 
         else
         Destroy(gameObject);
-
-        StartCoroutine("PlayAudio");
     }
 
     public IEnumerator PlayAudio()
@@ -56,11 +54,12 @@ public class SoundManager : MonoBehaviour
         if(currentMusic.loop)
         {
             musicSource.loop = true;
-            musicSource.PlayOneShot(currentMusic.musicIntro);
+            //musicSource.PlayOneShot(currentMusic.musicIntro);
 
-            Debug.Log("awodkawfd");
+            Debug.Log("hello");
 
             musicSource.clip = currentMusic.musicLoop;
+            musicSource.Play();
             musicSource.PlayScheduled(AudioSettings.dspTime + currentMusic.musicIntro.length);
         }
 

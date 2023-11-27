@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         // Call Functions
-        SetSettings();
+        //SetSettings();
         StartCoroutine("OnGameStart");
     }
 
@@ -59,6 +59,9 @@ public class MainMenu : MonoBehaviour
         // Fade Out Credit Canvas;
         gameStartCanvas.DOFade(0, fadeDuration);
         yield return new WaitForSeconds(fadeDuration);
+
+        SoundManager soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        soundManager.StartCoroutine("PlayAudio");
     }
 
     void SetSettings()
