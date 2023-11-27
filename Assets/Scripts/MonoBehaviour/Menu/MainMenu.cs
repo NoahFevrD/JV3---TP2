@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         // Call Functions
-        //SetSettings();
+        SetSettings();
         StartCoroutine("OnGameStart");
     }
 
@@ -62,6 +62,8 @@ public class MainMenu : MonoBehaviour
 
         SoundManager soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         soundManager.StartCoroutine("PlayAudio");
+
+        mainMenuAnimator.SetTrigger("Open");
     }
 
     void SetSettings()
@@ -69,9 +71,9 @@ public class MainMenu : MonoBehaviour
         // Set Audio Settings
         masterSlider.value = settings.audioVolume.masterVolume;
 
-        musicSlider.value = settings.audioVolume.musicVolume;
+        /*musicSlider.value = settings.audioVolume.musicVolume;
         sfxSlider.value = settings.audioVolume.sfxVolume;
-        voiceSlider.value = settings.audioVolume.voiceVolume;
+        voiceSlider.value = settings.audioVolume.voiceVolume;*/
     }
 
     public void ChangeVolume()
@@ -79,15 +81,33 @@ public class MainMenu : MonoBehaviour
         // Apply Volume to Settings
         settings.audioVolume.masterVolume = masterSlider.value;
 
-        settings.audioVolume.musicVolume = musicSlider.value;
+       /* settings.audioVolume.musicVolume = musicSlider.value;
         settings.audioVolume.sfxVolume = sfxSlider.value;
-        settings.audioVolume.voiceVolume = voiceSlider.value;
+        settings.audioVolume.voiceVolume = voiceSlider.value;*/
 
         // Apply Volume to AudioMixer
         settings.audioMixer.SetFloat("masterVolume", settings.audioVolume.masterVolume);
 
-        settings.audioMixer.SetFloat("musicVolume", settings.audioVolume.musicVolume);
+        /*settings.audioMixer.SetFloat("musicVolume", settings.audioVolume.musicVolume);
         settings.audioMixer.SetFloat("sfxVolume", settings.audioVolume.sfxVolume);
-        settings.audioMixer.SetFloat("voiceVolume", settings.audioVolume.voiceVolume);
+        settings.audioMixer.SetFloat("voiceVolume", settings.audioVolume.voiceVolume);*/
+    }
+
+    // Fade In / Fade Out
+
+    public void FadeIn(CanvasGroup canvasGroup)
+    {
+        // Fade In
+        canvasGroup.DOFade(1, fadeDuration);
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
+    }
+
+    public void FadeOut(CanvasGroup canvasGroup)
+    {
+        // Fade Out
+        canvasGroup.DOFade(0, fadeDuration);
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
     }
 }

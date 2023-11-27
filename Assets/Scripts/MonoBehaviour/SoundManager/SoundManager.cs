@@ -59,7 +59,6 @@ public class SoundManager : MonoBehaviour
             Debug.Log("hello");
 
             musicSource.clip = currentMusic.musicLoop;
-            musicSource.Play();
             musicSource.PlayScheduled(AudioSettings.dspTime + currentMusic.musicIntro.length);
         }
 
