@@ -37,6 +37,8 @@ public class SoundManager : MonoBehaviour
 
         else
         Destroy(gameObject);
+
+        StartCoroutine("PlayAudio");
     }
 
     public IEnumerator PlayAudio()
@@ -51,8 +53,23 @@ public class SoundManager : MonoBehaviour
             musicSource.volume = 1;
         }
 
-        musicSource.clip = currentMusic.musicIntro;
-        musicSource.Play();
+        if(currentMusic.loop)
+        {
+            musicSource.loop = true;
+            musicSource.PlayOneShot(currentMusic.musicIntro);
+
+            Debug.Log("awodkawfd");
+
+            musicSource.clip = currentMusic.musicLoop;
+            musicSource.PlayScheduled(AudioSettings.dspTime + currentMusic.musicIntro.length);
+        }
+
+        else
+        {
+            musicSource.loop = false;
+            musicSource.clip = currentMusic.musicIntro;
+            musicSource.Play();
+        }
     }
 
     public IEnumerator StopAudio()

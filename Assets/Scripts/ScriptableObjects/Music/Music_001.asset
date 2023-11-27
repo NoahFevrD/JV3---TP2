@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4d7ce1b6e3c074ba76f74780f27774, type: 3}
+  m_Name: Music_001
+  m_EditorClassIdentifier: 
+  musicName: Swing Out
+  musicIntro: {fileID: 8300000, guid: 8364c7f41752cdc4a91d4c2963d1a9e6, type: 3}
+  musicLoop: {fileID: 8300000, guid: b5974318b49c4d249b01b799899c2068, type: 3}
+  loop: 1

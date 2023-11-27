@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="Music_000",menuName ="Scriptable Object/Music")]
@@ -16,4 +17,7 @@ public class Music : ScriptableObject
     
     public AudioClip musicIntro;
     public AudioClip musicLoop;
+    [Space(5)]
+
+    public bool loop;
 }
