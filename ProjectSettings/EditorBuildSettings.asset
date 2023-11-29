@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: d0ce93a8c39aa9b448e391137b14e87a
+  - enabled: 1
+    path: Assets/Scenes/Magasin.unity
+    guid: 83792397658d84a4eb769899d564ba23
+  - enabled: 1
+    path: Assets/Scenes/SceneExterieure.unity
+    guid: 2470bae649efe554488573a7f11ba3b4
+  - enabled: 1
+    path: Assets/Scenes/SceneBossFight.unity
+    guid: 54b5d923d40ec374eb57172c1552f0a9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 27ec04d29d674c0438014b3ef997967e,
       type: 2}
