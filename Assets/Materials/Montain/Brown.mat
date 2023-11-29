@@ -26,10 +26,8 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - N_F_EAL_ON
-  - N_F_OFLMB_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
-  - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   m_InvalidKeywords:
   - N_F_TRANSAFFSHA
@@ -234,7 +232,7 @@ Material:
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 0.05
     - _MaxFadDistance: 2
     - _Metallic: 0
     - _MinFadDistance: 0
@@ -259,7 +257,7 @@ Material:
     - _N_F_NLASOBF: 0
     - _N_F_NM: 0
     - _N_F_O: 0
-    - _N_F_OFLMB: 1
+    - _N_F_OFLMB: 0
     - _N_F_PT: 0
     - _N_F_R: 0
     - _N_F_RDC: 1
@@ -267,7 +265,7 @@ Material:
     - _N_F_SCT: 0
     - _N_F_SL: 0
     - _N_F_SON: 0
-    - _N_F_SS: 1
+    - _N_F_SS: 0
     - _N_F_ST: 0
     - _N_F_STIAL: 0
     - _N_F_STIS: 0
@@ -351,7 +349,7 @@ Material:
     - _GlossColor: {r: 1, g: 1, b: 1, a: 1}
     - _Glow_Color: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.05660379, g: 0.030416548, b: 0.014150947, a: 1}
+    - _MainColor: {r: 0.03773582, g: 0.019900307, b: 0.008009963, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
     - _OverallShadowColor: {r: 0, g: 0, b: 0, a: 1}
