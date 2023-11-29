@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="PlayerInfos", menuName ="Scriptable Object/PlayerInfos")]

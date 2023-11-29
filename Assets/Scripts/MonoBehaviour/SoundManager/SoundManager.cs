@@ -51,23 +51,8 @@ public class SoundManager : MonoBehaviour
             musicSource.volume = 1;
         }
 
-        if(currentMusic.loop)
-        {
-            musicSource.loop = true;
-            //musicSource.PlayOneShot(currentMusic.musicIntro);
-
-            Debug.Log("hello");
-
-            musicSource.clip = currentMusic.musicLoop;
-            musicSource.PlayScheduled(AudioSettings.dspTime + currentMusic.musicIntro.length);
-        }
-
-        else
-        {
-            musicSource.loop = false;
-            musicSource.clip = currentMusic.musicIntro;
-            musicSource.Play();
-        }
+        musicSource.clip = currentMusic.musicIntro;
+        musicSource.Play();
     }
 
     public IEnumerator StopAudio()
