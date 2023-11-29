@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Weapon : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class Weapon : MonoBehaviour
         public AttackInfos attackInfos;
         [Space(5)]
 
-        public float firerate;
         public Transform weaponTip;
     }
 
@@ -29,7 +29,6 @@ public class Weapon : MonoBehaviour
         [Space(5)]
 
         public GameObject contactParticle;
-
     }
 
     [System.Serializable]
@@ -61,6 +60,11 @@ public class Weapon : MonoBehaviour
     Rigidbody rb;
     PlayerController player;
 
+    [Header("Input System")]
+    public InputActionReference trigger;
+
+    bool isGrabbed;
+
     // -------------------------
     // Functions
     // -------------------------
@@ -72,13 +76,46 @@ public class Weapon : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void EquipWeapon(bool right)
+    void OnEnable()
     {
-        // Set Variables
-        if(right)
-        player.rightWeapon = gameObject;
+        if(trigger != null)
+        trigger.action.performed += Shoot; 
+    }
 
-        else
-        player.leftWeapon = gameObject;
+    void OnDisable()
+    {
+        if(trigger != null)
+        trigger.action.performed -= Shoot; 
+    }
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // NEED TO BE CHANGE !!!
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        if(firearm.bullet != null && isGrabbed)
+        {
+            var bullet = Instantiate(firearm.bullet, firearm.weaponTip.position, firearm.weaponTip.rotation);
+            bullet.GetComponent<Hitbox>().attackInfos = firearm.attackInfos;
+            //audios.fire.PlayRandomAudio();
+        }
+    }
+
+    // Grab Functions
+    // -------------------------
+
+    public void OnGrab()
+    {
+        // Set currentItem in Hand Script
+        isGrabbed = true;
+        //audios.pickup.PlayRandomAudio();
+    }
+
+    public void OnDrop()
+    {
+        // Remove currentItem in Hand Script
+        isGrabbed = false;
+        //audios.drop.PlayRandomAudio();
     }
 }
