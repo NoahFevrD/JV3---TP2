@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4d7ce1b6e3c074ba76f74780f27774, type: 3}
   m_Name: Music_000
   m_EditorClassIdentifier: 
-  musicName: 
-  musicIntro: {fileID: 8300000, guid: 7025c19883bfc834e870aa50845788c2, type: 3}
-  musicLoop: {fileID: 0}
+  musicName: Main Menu
+  musicIntro: {fileID: 8300000, guid: ba829fc740b115341b534ff0a3af1055, type: 3}
+  musicLoop: {fileID: 8300000, guid: aad8fb6be0eb35949a925adb1323aa2b, type: 3}
+  loop: 0
