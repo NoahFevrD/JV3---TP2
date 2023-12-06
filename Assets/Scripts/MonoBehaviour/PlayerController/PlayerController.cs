@@ -20,5 +20,16 @@ public class PlayerController : MonoBehaviour
     // Functions
     // -------------------------
 
-    
+    void Start()
+    {
+        // Call Functions
+        TeleportOnStart();
+    }
+
+    void TeleportOnStart()
+    {
+        // Teleport Player if they are in the correct scene
+        if(playerInfos.teleportOnStart)
+        transform.position = playerInfos.startPos;
+    }
 }

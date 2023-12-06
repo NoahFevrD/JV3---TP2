@@ -11,6 +11,11 @@ public class PlayerInfos : ScriptableObject
     // Variables
     // -------------------------
 
+    [Header("StartPosition")]
+    public Vector3 startPos;
+    [HideInInspector]
+    public bool teleportOnStart;
+
     [Header("Player's Info")]
     public int health;
     public int maxHealth;

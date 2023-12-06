@@ -12,10 +12,22 @@ public class LevelManager : MonoBehaviour
     // Class
     // -------------------------
 
+    [System.Serializable]
+    public class SceneStartPosition
+    {
+        [Header("Start Position")]
+        public Vector3 shipPos;
+        public Vector3 shopPos;
+        public Vector3 dungeonPos;
+        public Vector3 bossPos;
+    }
 
     // -------------------------
     // Variables 
     // -------------------------
+
+    [Header("Scriptable Objects")]
+    public PlayerInfos playerInfos;
 
     [Header("Level Manager")]
     public static LevelManager instance;
@@ -29,6 +41,9 @@ public class LevelManager : MonoBehaviour
     [Space(5)]
 
     [SerializeField] float uiFadeDuration;
+
+    [Header("Scene Properties")]
+    [SerializeField] SceneStartPosition startPosition;
 
     // -------------------------
     // Functions
@@ -54,6 +69,8 @@ public class LevelManager : MonoBehaviour
         scene.allowSceneActivation = false;
         loadingCanvas.GetComponent<CanvasGroup>().DOFade(1, uiFadeDuration);
 
+        Scene oldScene = SceneManager.GetActiveScene();
+
         do
         {
             await Task.Delay(waitAfterLoad);
@@ -65,6 +82,37 @@ public class LevelManager : MonoBehaviour
         // Load Next Scene
         scene.allowSceneActivation = true;
         loadingCanvas.GetComponent<CanvasGroup>().DOFade(0, uiFadeDuration);
+        ChangePlayerPostion(oldScene);
+    }
+
+    void ChangePlayerPostion(Scene oldScene)
+    {
+        // Set Variables
+        GameObject player = GameObject.Find("Player");
+        Scene currentScene = SceneManager.GetActiveScene();
+        playerInfos.teleportOnStart = false;
+
+        if(currentScene.name != "SceneExterieure")
+        {
+            // Set Variables
+            Vector3 startPos = Vector3.up;
+
+            if(oldScene.name == "MainMenu")
+            startPos = startPosition.shipPos;
+
+            if(oldScene.name == "Magasin")
+            startPos = startPosition.shopPos;
+
+            if(oldScene.name == "SceneBoss")
+            startPos = startPosition.bossPos;
+
+            if(oldScene.name == "Dungeon")
+            startPos = startPosition.dungeonPos;
+
+            // Change Player Coords
+            playerInfos.startPos = startPos;
+            playerInfos.teleportOnStart = true;
+        }
     }
 
     public void QuitGame()
