@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1531921442}
-  m_IndirectSpecularColor: {r: 0.11714651, g: 0.016141107, b: 0.030396126, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8730,13 +8730,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.43019742, g: 0.745283, b: 0.14398026, a: 1}
-  deepColor: {r: 0.36465764, g: 0.5188676, b: 0.2274566, a: 1}
+  shallowColor: {r: 0.43019733, g: 0.745283, b: 0.14398018, a: 1}
+  deepColor: {r: 0.36465755, g: 0.5188676, b: 0.22745651, a: 1}
   colorDepth: 1.91
   horizonColor: {r: 0.79716986, g: 1, b: 0.8140723, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30169675, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30169666, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0
