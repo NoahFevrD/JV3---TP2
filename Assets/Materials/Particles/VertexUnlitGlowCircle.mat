@@ -24,7 +24,7 @@ Material:
     RenderType: TransparentCutout
   disabledShaderPasses:
   - GRABPASS
-  m_LockedProperties: 
+  m_LockedProperties: _BaseColor _BaseMap _Cutoff
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -111,10 +111,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 8.474191, g: 8.474191, b: 8.474191, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 0, b: 0.7396488, a: 1}
+    - _BaseColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 8.474192, g: 8.474192, b: 8.474192, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.7396488, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.6675392, g: 0.6675392, b: 0.6675392, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
