@@ -2419,10 +2419,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce7e46303d0a0f47841ab8d0a4884cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInfos: {fileID: 0}
   waitAfterLoad: 1500
   loadingCanvas: {fileID: 1691666216}
   loadingBar: {fileID: 55054031}
   uiFadeDuration: 0.35
+  startPosition:
+    shipPos: {x: 0, y: 0, z: 0}
+    shopPos: {x: 0, y: 0, z: 0}
+    dungeonPos: {x: 0, y: 0, z: 0}
+    bossPos: {x: 0, y: 0, z: 0}
 --- !u!4 &618251035
 Transform:
   m_ObjectHideFlags: 0
@@ -6685,6 +6691,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1805310459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1821767442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821767443}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1821767443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821767442}
+  m_LocalRotation: {x: 0.000000029802319, y: 0.70710677, z: -0.000000059604638, w: 0.7071069}
+  m_LocalPosition: {x: 0.731, y: 0.321, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1441125388114864126}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1856850055
 GameObject:
   m_ObjectHideFlags: 0
@@ -9672,6 +9709,7 @@ Transform:
   - {fileID: 1441125388114864120}
   - {fileID: 1441125388114864118}
   - {fileID: 1856850056}
+  - {fileID: 1821767443}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -9760,6 +9798,7 @@ GameObject:
   - component: {fileID: 1441125388115098593}
   - component: {fileID: 1441125388115098592}
   - component: {fileID: 1441125388115098591}
+  - component: {fileID: 1441125388115098595}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -9816,10 +9855,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441125388115098595}
+        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1441125388115098595}
+        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -9971,6 +10034,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1441125388115098595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441125388115098590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a131501efb02994f9780d7d79384658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfos: {fileID: 0}
+  firearm:
+    bullet: {fileID: 7887577078642727075, guid: e79c46f99f3a6a547aedda9da385a8c8,
+      type: 3}
+    attackInfos: {fileID: 11400000, guid: 8558c95d48a10194b9efb4c55398757f, type: 2}
+    weaponTip: {fileID: 0}
+  lethalWeapon:
+    hitbox: {fileID: 0}
+    attackInfos: {fileID: 0}
+    contactParticle: {fileID: 0}
+  audios:
+    drop: {fileID: 0}
+    pickup: {fileID: 0}
+    fire: {fileID: 0}
+    contact: {fileID: 0}
+  trigger: {fileID: 0}
 --- !u!224 &1441125388219627000
 RectTransform:
   m_ObjectHideFlags: 0
