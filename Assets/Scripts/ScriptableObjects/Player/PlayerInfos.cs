@@ -11,15 +11,15 @@ public class PlayerInfos : ScriptableObject
     // Variables
     // -------------------------
 
-    [Header("StartPosition")]
+    [Header("Start Position")]
     public Vector3 startPos;
     [HideInInspector]
     public bool teleportOnStart;
 
     [Header("Player's Info")]
     public int health;
-    public int maxHealth;
-    public int money;
+    public float maxHealth;
+    public int points;
     public float timeAlive;
 
     [Header("Level")]
@@ -41,19 +41,6 @@ public class PlayerInfos : ScriptableObject
     // -------------------------
     // Functions
     // -------------------------
-
-    // ~~~~~~~~~~~~~~~~~~
-    // NEED TO BE REMOVED
-    // ~~~~~~~~~~~~~~~~~~
-    void Awake()
-    {
-        // RESET EVERYTHING
-        currentLevel = 1;
-        experience = 0;
-        levelCap = 0;
-        statsPoints = 0;
-    }
-    // ~~~~~~~~~~~~~~~~~~
 
     public void ExpGain(int expGain)
     {
