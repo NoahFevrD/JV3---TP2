@@ -99,7 +99,11 @@ public class Weapon : MonoBehaviour
             var bullet = Instantiate(firearm.bullet, firearm.weaponTip.position, firearm.weaponTip.rotation);
             bullet.GetComponent<Hitbox>().attackInfos = firearm.attackInfos;
             //audios.fire.PlayRandomAudio();
+
+            Debug.Log("My broskiii");
         }
+
+        Debug.Log("NAWR");
     }
 
     // Grab Functions
