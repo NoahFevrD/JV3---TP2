@@ -17,7 +17,7 @@ MonoBehaviour:
   teleportOnStart: 0
   health: 30
   maxHealth: 30
-  points: 0
+  points: 150
   timeAlive: 32.318268
   currentLevel: 2
   experience: 5
