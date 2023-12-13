@@ -11,6 +11,9 @@ public class PlayerInfos : ScriptableObject
     // Variables
     // -------------------------
 
+    [HideInInspector]
+    public PlayerController player;
+
     [Header("Start Position")]
     public Vector3 startPos;
     [HideInInspector]
@@ -24,15 +27,17 @@ public class PlayerInfos : ScriptableObject
 
     [Header("Level")]
     public int currentLevel = 1;
-    public float experience;
-    public float nextLevelExp;
+    public int experience;
+    public int nextLevelExp;
     public float levelRatio;
-    public int statsPoints;
     [Space(5)]
 
     public int levelCap;
 
     [Header("Bonus Stats")]
+    public int healthBonus;
+    [Space(5)]
+
     public int defense;
     public int strength;
     public int speed;
@@ -57,13 +62,35 @@ public class PlayerInfos : ScriptableObject
         {
             // Set Variables
             currentLevel++;
-            statsPoints++;
+
+            health += healthBonus;
+            maxHealth += healthBonus;
 
             experience -= nextLevelExp;
-            nextLevelExp *= levelRatio;
+            nextLevelExp =  (int)Mathf.Round( nextLevelExp * levelRatio);
+
+            defense++;
+            strength++;
+            speed++;
+            grind++;
+
+            // Call Functions
+            player.LevelUp();
 
             // Round Float
             MathF.Round(nextLevelExp);
         }
+    }
+
+    public int RoundDamage(int damage, int stat, float multiply)
+    {
+        // Round Given Damage
+        float bonusDamage = stat * damage * multiply;
+        int roundDamage = (int)MathF.Round(damage + bonusDamage);
+
+        Debug.Log("Bonus Damage :" + bonusDamage);
+        Debug.Log("Total Damage :" + roundDamage);
+
+        return roundDamage;
     }
 }

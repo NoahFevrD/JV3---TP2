@@ -34,8 +34,14 @@ public class RandomAudio : MonoBehaviour
     public void PlayRandomAudio()
     {
         // Stop then Play a new Random AudioClip
-        audioSource.Stop();
-        audioSource.clip = audioClips[RandomInt(0, audioClips.Length)];
-        audioSource.Play();
+        if(audioClips.Length > 0)
+        {
+            audioSource.Stop();
+            audioSource.clip = audioClips[RandomInt(0, audioClips.Length)];
+            audioSource.Play();
+        }
+
+        else
+        Debug.Log("No Sound Assigned On RandomAuio :" + gameObject);
     }
 }

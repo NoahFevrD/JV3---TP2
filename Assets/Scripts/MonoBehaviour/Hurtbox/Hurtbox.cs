@@ -15,10 +15,20 @@ public class Hurtbox : MonoBehaviour
     [Space(5)]
 
     [SerializeField] PlayerController player;
-    [SerializeField] PlayerController enemy;
+    [SerializeField] EnemyController enemy;
     [SerializeField] PlayerController boss;
 
     [SerializeField] GameObject floatyText;
+
+    void Start()
+    {
+        // Set Variables
+        if(GetComponent<PlayerController>() != null)
+        player = GetComponent<PlayerController>();
+
+        if(GetComponent<EnemyController>() != null)
+        enemy = GetComponent<EnemyController>();
+    }
 
     public void SendDamageInfos(AttackInfos infos)
     {
@@ -26,16 +36,20 @@ public class Hurtbox : MonoBehaviour
         // NEED TO BE CHANGE !!!
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        var text = Instantiate(floatyText, transform.position + Vector3.up, transform.rotation);
-        text.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "- " + infos.damage.ToString();
+        if(floatyText != null)
+        {
+            var text = Instantiate(floatyText, transform.position + Vector3.up, transform.rotation);
+            text.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "- " + infos.damage;
+        }
 
         // Player
         if(player != null)
-        {}
+        if(!player.isInvincible)
+        player.TakeDamage(infos);
 
         // Enemy
         else if(enemy != null)
-        {}
+        enemy.TakeDamage(infos);
 
         // Boss
         else if(boss != null)

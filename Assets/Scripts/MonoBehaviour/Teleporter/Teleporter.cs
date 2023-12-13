@@ -28,6 +28,12 @@ public class Teleporter : MonoBehaviour
     {
         // If other has XROrigin, Load Scene
         if(other.GetComponent<XROrigin>() != null)
-        levelManager.LoadAsynchScene(sceneName);
+        {
+            // Set Variables
+            other.GetComponent<PlayerController>().isInvincible = true;
+
+            // Call Functions
+            levelManager.LoadAsynchScene(sceneName);
+        }
     }
 }
