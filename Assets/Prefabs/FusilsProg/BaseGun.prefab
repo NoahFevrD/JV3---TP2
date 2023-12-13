@@ -503,7 +503,7 @@ Transform:
   - {fileID: 695654994999522051}
   - {fileID: 4562701626626191705}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!54 &4596368272702782574
 Rigidbody:
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a131501efb02994f9780d7d79384658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInfos: {fileID: 0}
+  weaponInfos: {fileID: 11400000, guid: 7ca3664ed8f4e204cb72299439bdb68b, type: 2}
   firearm:
     bullet: {fileID: 7887577078642727075, guid: e79c46f99f3a6a547aedda9da385a8c8,
       type: 3}

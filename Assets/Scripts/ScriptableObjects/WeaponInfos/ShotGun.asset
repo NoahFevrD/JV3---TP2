@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149773c9e827c43459acb703a12ff7be, type: 3}
   m_Name: ShotGun
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  weaponName: 
+  weaponPrefab: {fileID: 8586262182496558332, guid: 988aebb2fecf55743a556834718a2220,
+    type: 3}
+  weaponName: Handgun
   owned: 0
-  price: 0
+  price: 100
   requiredFavors: 0
   discountPrice: 0

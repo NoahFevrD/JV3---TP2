@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
     // -------------------------
 
     [Header("Weapon")]
-    [SerializeField] WeaponInfos weaponInfos;
+    public WeaponInfos weaponInfos;
     [Space(5)]
 
     [SerializeField] Firearm firearm;
@@ -109,6 +109,7 @@ public class Weapon : MonoBehaviour
     {
         // Set currentItem in Hand Script
         isGrabbed = true;
+        
         //audios.pickup.PlayRandomAudio();
     }
 

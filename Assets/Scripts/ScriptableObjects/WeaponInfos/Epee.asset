@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149773c9e827c43459acb703a12ff7be, type: 3}
   m_Name: Epee
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  weaponName: 
+  weaponPrefab: {fileID: 2916995178506831533, guid: b542110061ca9a04690bb5f1b8c9f79d,
+    type: 3}
+  weaponName: Sword
   owned: 0
-  price: 0
+  price: 10000
   requiredFavors: 0
   discountPrice: 0

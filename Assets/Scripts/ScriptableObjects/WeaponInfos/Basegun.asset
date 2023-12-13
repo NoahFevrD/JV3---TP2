@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149773c9e827c43459acb703a12ff7be, type: 3}
   m_Name: Basegun
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  weaponName: 
-  owned: 0
+  weaponPrefab: {fileID: 5664002966498278378, guid: 9b93583d4d0a7a043a2955e879cf4941,
+    type: 3}
+  weaponName: Basegun
+  owned: 1
   price: 0
   requiredFavors: 0
   discountPrice: 0
