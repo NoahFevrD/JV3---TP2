@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
     // -------------------------
 
     [System.Serializable]
+    public class Audios
+    {
+        [Header("Player's Audio")]
+        public RandomAudio damage;
+        public RandomAudio death;
+    }
+
+    [System.Serializable]
     public class ScreenUi
     {
         [Header("Screen UI")]
@@ -40,15 +48,17 @@ public class PlayerController : MonoBehaviour
     // Variables
     // -------------------------
 
+    [HideInInspector]
+    public bool isInvincible;
+
     [Header("Player Controller")]
-    [SerializeField] PlayerInfos playerInfos;
+    public PlayerInfos playerInfos;
     [Space(5)]
 
-    public GameObject rightWeapon;
-    public GameObject leftWeapon;
-    [Space(10)]
+    [Header("Components")]
 
     public ScreenUi screenUi;
+    [SerializeField] Audios audios;
 
     // -------------------------
     // Functions
@@ -59,6 +69,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        // Set Variables
+        playerInfos.player = this;
+
         // Call Functions
         TeleportOnStart();
         SetScreenUI();
@@ -138,7 +151,23 @@ public class PlayerController : MonoBehaviour
     // Combat Functions
     // -------------------------
 
-    void SetHealthUI()
+    public void LevelUp()
+    {
+        Debug.Log("Level UP! Current Level : " + playerInfos.currentLevel);
+    }
+
+    public void MoneyUp(int amount)
+    {
+        float bonusMoney = playerInfos.grind * amount * .1f;
+        playerInfos.points += (int)MathF.Round(amount + bonusMoney);
+
+        Debug.Log("Bonus Money :" + bonusMoney);
+
+        TextMeshProUGUI points = screenUi.points.GetComponent<TextMeshProUGUI>();
+        points.text = playerInfos.points + " pts";
+    }
+
+    public void SetHealthUI()
     {
         // Set Variables
         Image healthbar = screenUi.healthBar.transform.GetChild(1).GetComponent<Image>();
@@ -153,5 +182,29 @@ public class PlayerController : MonoBehaviour
 
         else
         healthbar.color = screenUi.defaultHealth;
+    }
+
+    public void TakeDamage(AttackInfos infos)
+    {
+        // Set Variables
+        playerInfos.health -= playerInfos.RoundDamage(infos.damage, playerInfos.defense, -.025f);
+
+        if(playerInfos.health <= 0)
+        StartCoroutine("Death");
+
+        // Play Animation & Audio
+        else
+        audios.damage.PlayRandomAudio();
+        
+        SetHealthUI();
+    }
+
+    IEnumerator Death()
+    {
+        playerInfos.health = 0;
+        audios.death.PlayRandomAudio();
+
+        // idk bro
+        yield return new WaitForSeconds(0);
     }
 }

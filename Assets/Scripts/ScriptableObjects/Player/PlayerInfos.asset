@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4d0c55e286b8a43b3df391f1af3377, type: 3}
   m_Name: PlayerInfos
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   teleportOnStart: 0
-  health: 20
+  health: 30
   maxHealth: 30
   points: 0
-  timeAlive: 1693.6815
-  currentLevel: 1
-  experience: 0
-  nextLevelExp: 0
-  levelRatio: 0
-  statsPoints: 0
-  levelCap: 0
+  timeAlive: 32.318268
+  currentLevel: 2
+  experience: 5
+  nextLevelExp: 23
+  levelRatio: 1.15
+  levelCap: 20
+  healthBonus: 3
   defense: 0
   strength: 0
   speed: 0
