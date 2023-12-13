@@ -6641,7 +6641,7 @@ GameObject:
   - component: {fileID: 1295725767}
   - component: {fileID: 1295725766}
   m_Layer: 0
-  m_Name: scene-magazin
+  m_Name: MusiqueAmbiance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
