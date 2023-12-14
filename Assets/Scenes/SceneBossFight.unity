@@ -14180,6 +14180,12 @@ PrefabInstance:
       propertyPath: audios.damage
       value: 
       objectReference: {fileID: 1249475395}
+    - target: {fileID: 6023979702168709929, guid: b90eff62cfb54a74a98aa15b47ccfafe,
+        type: 3}
+      propertyPath: screenUi.sceneExtManager
+      value: 
+      objectReference: {fileID: 11400000, guid: 78d32610292b7ac49893e020c00ab601,
+        type: 2}
     - target: {fileID: 7236256826736872997, guid: b90eff62cfb54a74a98aa15b47ccfafe,
         type: 3}
       propertyPath: m_Name

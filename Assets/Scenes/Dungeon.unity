@@ -13451,6 +13451,12 @@ PrefabInstance:
       propertyPath: m_TrackingStateInput.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
       value: cfef84f4-6d1d-4187-a949-fd8da7c969c1
       objectReference: {fileID: 0}
+    - target: {fileID: 6023979702168709929, guid: b90eff62cfb54a74a98aa15b47ccfafe,
+        type: 3}
+      propertyPath: screenUi.sceneExtManager
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b8fdf327c55fca4da69bd6e35df4529,
+        type: 2}
     - target: {fileID: 7236256826736872997, guid: b90eff62cfb54a74a98aa15b47ccfafe,
         type: 3}
       propertyPath: m_Name
