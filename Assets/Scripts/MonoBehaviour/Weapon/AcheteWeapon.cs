@@ -76,10 +76,12 @@ public class AcheteWeapon : MonoBehaviour
         _uiEpee.SetActive(false);
     }
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("ffgbhgfcv");
+        Debug.Log("1");
         if(other.GetComponent<Weapon>() != null){
+            Debug.Log("2");
             currentWeapon = other.GetComponent<Weapon>();
             if(!currentWeapon.weaponInfos.owned ){
+                Debug.Log("3");
                 if(currentWeapon.weaponInfos.weaponName=="Shotgun"){
                     _uiAchete.SetActive(false);
                     _uiPending.SetActive(false);
@@ -88,6 +90,7 @@ public class AcheteWeapon : MonoBehaviour
                     _uiEpee.SetActive(false); 
                 }
                 else if(currentWeapon.weaponInfos.weaponName=="Handgun"){
+                    Debug.Log("4");
                     _uiAchete.SetActive(false);
                     _uiPending.SetActive(false);
                     _uiShotgun.SetActive(false);
@@ -143,7 +146,7 @@ public class AcheteWeapon : MonoBehaviour
         }
     }
 
-    private void BuyShotgun(){
+    public void BuyShotgun(){
         if((_playerInfos.points - 100)>=0){
           currentWeapon.weaponInfos.owned = true;
         _uiAchete.SetActive(true);
@@ -156,7 +159,7 @@ public class AcheteWeapon : MonoBehaviour
         
     }
 
-    private void BuyHandgun(){
+    public void BuyHandgun(){
         if((_playerInfos.points - 50)>=0){
           currentWeapon.weaponInfos.owned = true;
         _uiAchete.SetActive(true);
@@ -168,7 +171,7 @@ public class AcheteWeapon : MonoBehaviour
         }
     }
 
-    private void BuySword(){
+    public void BuySword(){
         if((_playerInfos.points - 10000)>=0){
           currentWeapon.weaponInfos.owned = true;
         _uiAchete.SetActive(true);
