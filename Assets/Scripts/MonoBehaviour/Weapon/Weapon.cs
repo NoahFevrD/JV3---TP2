@@ -50,6 +50,9 @@ public class Weapon : MonoBehaviour
     public WeaponInfos weaponInfos;
     [Space(5)]
 
+    public SceneExtManager sceneManager;
+    [Space(5)]
+
     [SerializeField] Firearm firearm;
     [Space(5)]
 
@@ -109,6 +112,10 @@ public class Weapon : MonoBehaviour
     {
         // Set currentItem in Hand Script
         isGrabbed = true;
+
+        if(weaponInfos.owned=true){
+
+        }
         
         //audios.pickup.PlayRandomAudio();
     }
