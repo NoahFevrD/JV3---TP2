@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Controller")]
     public PlayerInfos playerInfos;
+    [SerializeField] Transform weaponSpawn;
     [Space(5)]
 
     [Header("Components")]
@@ -82,6 +83,8 @@ public class PlayerController : MonoBehaviour
         // Teleport Player if they are in the correct scene
         if(playerInfos.teleportOnStart)
         transform.position = playerInfos.startPos;
+
+        //Instantiate(playerInfos.currentWeapon., weaponSpawn.position, weaponSpawn.rotation);
     }
 
     void SetScreenUI()
@@ -108,6 +111,11 @@ public class PlayerController : MonoBehaviour
             if(screenUi.stopTimerScenes[i] == SceneManager.GetActiveScene().name)
             screenUi.timerBool = false;
         }
+    }
+
+    public void TeleportPlayer(Vector3 position)
+    {
+        transform.position = position;
     }
 
     // Update Functions

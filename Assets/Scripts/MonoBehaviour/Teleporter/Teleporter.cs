@@ -11,6 +11,7 @@ public class Teleporter : MonoBehaviour
 
     [Header("Teleporter")]
     [SerializeField] string sceneName;
+    [SerializeField] Vector3 position;
 
     LevelManager levelManager;
 
@@ -33,7 +34,11 @@ public class Teleporter : MonoBehaviour
             other.GetComponent<PlayerController>().isInvincible = true;
 
             // Call Functions
+            if(sceneName != null)
             levelManager.LoadAsynchScene(sceneName);
+
+            else
+            other.GetComponent<PlayerController>().TeleportPlayer(position);
         }
     }
 }
