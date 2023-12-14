@@ -16,6 +16,6 @@ MonoBehaviour:
     type: 3}
   weaponName: Shotgun
   owned: 0
-  price: 100
+  price: 150
   requiredFavors: 0
   discountPrice: 0
