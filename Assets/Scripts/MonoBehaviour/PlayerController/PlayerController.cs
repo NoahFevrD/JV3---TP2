@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Controller")]
     public PlayerInfos playerInfos;
+    [SerializeField] LevelManager levelManager;
     [SerializeField] Transform weaponSpawn;
     [Space(5)]
 
