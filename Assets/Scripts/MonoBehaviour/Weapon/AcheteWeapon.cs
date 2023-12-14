@@ -121,24 +121,24 @@ public class AcheteWeapon : MonoBehaviour
     }
 
     private void SetNumberShotgun(){
-        _pointsShotgun = _playerInfos.points + "";
-        _restantShotgun = _playerInfos.points - 100 + "";
-        if(_restantShotgun<0){
-            _restantShotgun = "Pas assez de points";
+        _pointsShotgun.text = _playerInfos.points.toString();
+        _restantShotgun.text = (_playerInfos.points - 100).toString();
+        if((_playerInfos.points - 100)<0){
+            _restantShotgun.text = "Pas assez de points";
         } 
     }
     private void SetNumberHandgun(){
-        _pointsHandgun = _playerInfos.points + "";
-        _restantHandgun = _playerInfos.points - 50 + "";
-        if(_restantHandgun<0){
-            _restantHandgun = "Pas assez de points";
+        _pointsHandgun.text = _playerInfos.points.toString();
+        _restantHandgun.text = (_playerInfos.points - 50).toString();
+        if((_playerInfos.points - 50)<0){
+            _restantHandgun.text = "Pas assez de points";
         }
     }
     private void SetNumberSword(){
-        _pointsSword = _playerInfos.points + "";
-        _restantSword = _playerInfos.points - 10000 + "";
-        if(_restantSword<0){
-            _restantSword = "Pas assez de points";
+        _pointsSword.text = _playerInfos.points.toString();
+        _restantSword.text = (_playerInfos.points - 10000).toString();
+        if((_playerInfos.points - 10000)<0){
+            _restantSword.text = "Pas assez de points";
         }
     }
 }
