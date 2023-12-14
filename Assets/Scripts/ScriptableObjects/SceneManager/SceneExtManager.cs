@@ -8,7 +8,5 @@ public class SceneExtManager : ScriptableObject {
     public string creator = "Emile";
 
     public string depart = "menu";
-
-    public string armeTient = "basegun";
     
 }
