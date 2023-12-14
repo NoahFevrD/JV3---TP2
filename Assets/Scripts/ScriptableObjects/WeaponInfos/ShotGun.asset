@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 8586262182496558332, guid: 988aebb2fecf55743a556834718a2220,
     type: 3}
-  weaponName: Handgun
+  weaponName: Shotgun
   owned: 0
   price: 100
   requiredFavors: 0
