@@ -14,6 +14,9 @@ public class PlayerInfos : ScriptableObject
     [HideInInspector]
     public PlayerController player;
 
+    [Header("Arme")]
+    public string currentWeapon;
+
     [Header("Start Position")]
     public Vector3 startPos;
     [HideInInspector]
