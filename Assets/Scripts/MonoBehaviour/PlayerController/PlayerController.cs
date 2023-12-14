@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         if(playerInfos.teleportOnStart)
         transform.position = playerInfos.startPos;
 
-        Instantiate(playerInfos.currentWeapon., weaponSpawn.position, weaponSpawn.rotation);
+        //Instantiate(playerInfos.currentWeapon., weaponSpawn.position, weaponSpawn.rotation);
     }
 
     void SetScreenUI()
