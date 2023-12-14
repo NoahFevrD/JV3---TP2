@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour
     [Header("Bullet")]
     [SerializeField] float bulletSpeed;
     [SerializeField] float duration;
+    [Space(5)]
+
+    [SerializeField] GameObject destroyParticle;
 
     // -------------------------
     // Functions
@@ -28,8 +31,12 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
     }
 
-    void Destroy()
+    public void Destroy()
     {
+        // Destroy GameObject
+        if(destroyParticle != null)
+        Instantiate(destroyParticle, transform.position, transform.rotation);
+        
         Destroy(gameObject);
     }
 }

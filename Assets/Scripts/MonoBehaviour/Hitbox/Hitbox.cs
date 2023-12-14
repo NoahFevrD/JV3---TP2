@@ -10,7 +10,6 @@ public class Hitbox : MonoBehaviour
 
     [Header("Hitbox")]
     public AttackInfos attackInfos;
-    [SerializeField] bool isBullet;
 
     // -------------------------
     // Functions
@@ -23,8 +22,8 @@ public class Hitbox : MonoBehaviour
         {
             other.GetComponent<Hurtbox>().SendDamageInfos(attackInfos);
 
-            if(isBullet)
-            Destroy(gameObject);
+            if(GetComponent<Bullet>() != null)
+            GetComponent<Bullet>().Destroy();
         }
     }
 }
