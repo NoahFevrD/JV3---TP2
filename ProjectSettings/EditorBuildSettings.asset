@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneBossFight.unity
     guid: 54b5d923d40ec374eb57172c1552f0a9
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: f15cf5a55fe283d44b98d747f3791a00
+  - enabled: 1
+    path: Assets/Scenes/Fin.unity
+    guid: 8cf95d5244426d449a8634727c147f7c
+  - enabled: 1
+    path: Assets/Scenes/SceneVaisseau.unity
+    guid: ab63bd9c23e954242b9289de1d4ddefe
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 27ec04d29d674c0438014b3ef997967e,
       type: 2}

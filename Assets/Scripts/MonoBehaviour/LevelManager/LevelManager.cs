@@ -91,16 +91,21 @@ public class LevelManager : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         Scene currentScene = SceneManager.GetActiveScene();
         playerInfos.teleportOnStart = false;
+        playerInfos.weaponOnStart = true;
 
-        if(currentScene.name != "SceneExterieure")
+        if(currentScene.name == "SceneExterieure")
         {
             // Set Variables
             Vector3 startPos = Vector3.zero;
+            playerInfos.weaponOnStart = true;
 
             if(oldScene.name == "MainMenu")
             startPos = startPosition.shipPos;
 
             if(oldScene.name == "SceneVaisseau")
+            startPos = startPosition.shipPos;
+
+            if(oldScene.name == "Fin")
             startPos = startPosition.shipPos;
 
             if(oldScene.name == "Magasin")
@@ -116,6 +121,9 @@ public class LevelManager : MonoBehaviour
             playerInfos.startPos = startPos;
             playerInfos.teleportOnStart = true;
         }
+
+        if(currentScene.name == "SceneBoss" && currentScene.name == "Dungeon")
+        playerInfos.weaponOnStart = true;
     }
 
     public void QuitGame()

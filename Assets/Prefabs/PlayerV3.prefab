@@ -1413,6 +1413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInvincible: 0
   playerInfos: {fileID: 11400000, guid: 029f25854c8501844ba972cf61a3fc7c, type: 2}
+  levelManager: {fileID: 0}
   weaponSpawn: {fileID: 0}
   screenUi:
     sceneExtManager: {fileID: 11400000, guid: 6ea84ee44c196cb4eab62136e7773af5, type: 2}

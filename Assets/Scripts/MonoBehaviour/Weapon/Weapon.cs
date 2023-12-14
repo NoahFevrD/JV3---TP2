@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+using Unity.Services.Analytics;
 
 public class Weapon : MonoBehaviour
 {
@@ -60,6 +62,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Grab Behaviour")]
     [SerializeField] bool ownedOnGrab;
+    [SerializeField] UnityEvent onGrab;
 
     [Header("Shot Behaviour")]
     [SerializeField] float shootInterval;
@@ -122,6 +125,7 @@ public class Weapon : MonoBehaviour
     {
         // Set currentItem in Hand Script
         isGrabbed = true;
+        onGrab.Invoke();
 
         if(ownedOnGrab)
         weaponInfos.owned = true;

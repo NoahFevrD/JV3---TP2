@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1531921442}
-  m_IndirectSpecularColor: {r: 0.11714651, g: 0.016141111, b: 0.030396128, a: 1}
+  m_IndirectSpecularColor: {r: 0.11714654, g: 0.016141118, b: 0.030396128, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7726,6 +7726,12 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 708267217}
+    - target: {fileID: 6023979702168709929, guid: b90eff62cfb54a74a98aa15b47ccfafe,
+        type: 3}
+      propertyPath: screenUi.sceneExtManager
+      value: 
+      objectReference: {fileID: 11400000, guid: dd0b0f3a625fa3846aac8af2794be363,
+        type: 2}
     - target: {fileID: 6046946437509889449, guid: b90eff62cfb54a74a98aa15b47ccfafe,
         type: 3}
       propertyPath: m_LocomotionProvider
@@ -7848,13 +7854,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.4301944, g: 0.745283, b: 0.1439774, a: 1}
-  deepColor: {r: 0.36465463, g: 0.5188676, b: 0.22745359, a: 1}
+  shallowColor: {r: 0.4301939, g: 0.745283, b: 0.14397693, a: 1}
+  deepColor: {r: 0.36465412, g: 0.5188676, b: 0.22745308, a: 1}
   colorDepth: 1.91
   horizonColor: {r: 0.79716986, g: 1, b: 0.8140723, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30169374, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30169323, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0
@@ -7962,6 +7968,7 @@ GameObject:
   - component: {fileID: 9036224601308721951}
   - component: {fileID: 4823605380655648952}
   - component: {fileID: 9036224601308721952}
+  - component: {fileID: 9036224601308721953}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -8032,3 +8039,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9036224601308721953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303651581159065539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77ba6328ffafe346a230d086e5cb9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterStat: {fileID: 11400000, guid: 6ed62d349bbc8c447a68246996d36ed3, type: 2}
