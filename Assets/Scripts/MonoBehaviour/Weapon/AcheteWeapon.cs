@@ -75,10 +75,10 @@ public class AcheteWeapon : MonoBehaviour
         _uiHandgun.SetActive(false);
         _uiEpee.SetActive(false);
     }
-    private void OnCollisionEnter(Collision other) {
-        
-        if(other.transform.GetComponent<Weapon>() != null){
-            currentWeapon = other.transform.GetComponent<Weapon>();
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("ffgbhgfcv");
+        if(other.GetComponent<Weapon>() != null){
+            currentWeapon = other.GetComponent<Weapon>();
             if(!currentWeapon.weaponInfos.owned ){
                 if(currentWeapon.weaponInfos.weaponName=="Shotgun"){
                     _uiAchete.SetActive(false);
@@ -116,7 +116,7 @@ public class AcheteWeapon : MonoBehaviour
         
     }
 
-    private void OnCollisionExit(Collision other) {
+    private void OnTriggerExit(Collider other) {
         Invoke("finUI", 3);
     }
 

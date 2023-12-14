@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: PlayerInfos
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  currentWeapon: BaseGun
   startPos: {x: 0, y: 0, z: 0}
   teleportOnStart: 0
   health: 30
   maxHealth: 30
-  points: 150
+  points: 200
   timeAlive: 32.318268
   currentLevel: 2
   experience: 5
