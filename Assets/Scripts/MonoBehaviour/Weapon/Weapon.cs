@@ -58,13 +58,6 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] LethalWeapon lethalWeapon;
 
-    [Header("Grab Behaviour")]
-    [SerializeField] bool ownedOnGrab;
-
-    [Header("Shot Behaviour")]
-    [SerializeField] float shootInterval;
-    bool canShoot = true;
-
     [Header("Components")]
     [SerializeField] Audios audios;
     Rigidbody rb;
@@ -100,19 +93,16 @@ public class Weapon : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if(firearm.bullet != null && isGrabbed && canShoot)
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // NEED TO BE CHANGE !!!
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        if(firearm.bullet != null && isGrabbed)
         {
             var bullet = Instantiate(firearm.bullet, firearm.weaponTip.position, firearm.weaponTip.rotation);
             bullet.GetComponent<Hitbox>().attackInfos = firearm.attackInfos;
-            audios.fire.PlayRandomAudio();
-
-            Invoke("CanShot", shootInterval);
+            //audios.fire.PlayRandomAudio();
         }
-    }
-
-    void CanShot()
-    {
-        canShoot = true;
     }
 
     // Grab Functions
@@ -123,19 +113,17 @@ public class Weapon : MonoBehaviour
         // Set currentItem in Hand Script
         isGrabbed = true;
 
-        if(ownedOnGrab)
-        weaponInfos.owned = true;
+        if(weaponInfos.owned=true){
 
-        if(weaponInfos.owned)
-        player.playerInfos.currentWeapon = weaponInfos;
+        }
         
-        audios.pickup.PlayRandomAudio();
+        //audios.pickup.PlayRandomAudio();
     }
 
     public void OnDrop()
     {
         // Remove currentItem in Hand Script
         isGrabbed = false;
-        audios.drop.PlayRandomAudio();
+        //audios.drop.PlayRandomAudio();
     }
 }

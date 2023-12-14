@@ -15,8 +15,7 @@ public class PlayerInfos : ScriptableObject
     public PlayerController player;
 
     [Header("Arme")]
-    public bool weaponOnStart;
-    public WeaponInfos currentWeapon;
+    public string currentWeapon;
 
     [Header("Start Position")]
     public Vector3 startPos;

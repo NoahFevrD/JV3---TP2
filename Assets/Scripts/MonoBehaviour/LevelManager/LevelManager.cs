@@ -95,7 +95,7 @@ public class LevelManager : MonoBehaviour
         if(currentScene.name != "SceneExterieure")
         {
             // Set Variables
-            Vector3 startPos = Vector3.zero;
+            Vector3 startPos = Vector3.up;
 
             if(oldScene.name == "MainMenu")
             startPos = startPosition.shipPos;
