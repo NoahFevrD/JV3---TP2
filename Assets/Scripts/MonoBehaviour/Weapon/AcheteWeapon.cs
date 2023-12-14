@@ -121,24 +121,62 @@ public class AcheteWeapon : MonoBehaviour
     }
 
     private void SetNumberShotgun(){
-        _pointsShotgun.text = _playerInfos.points.toString();
-        _restantShotgun.text = (_playerInfos.points - 100).toString();
+        _pointsShotgun.text = _playerInfos.points.ToString();
+        _restantShotgun.text = (_playerInfos.points - 100).ToString();
         if((_playerInfos.points - 100)<0){
             _restantShotgun.text = "Pas assez de points";
         } 
     }
     private void SetNumberHandgun(){
-        _pointsHandgun.text = _playerInfos.points.toString();
-        _restantHandgun.text = (_playerInfos.points - 50).toString();
+        _pointsHandgun.text = _playerInfos.points.ToString();
+        _restantHandgun.text = (_playerInfos.points - 50).ToString();
         if((_playerInfos.points - 50)<0){
             _restantHandgun.text = "Pas assez de points";
+            
         }
     }
     private void SetNumberSword(){
-        _pointsSword.text = _playerInfos.points.toString();
-        _restantSword.text = (_playerInfos.points - 10000).toString();
+        _pointsSword.text = _playerInfos.points.ToString();
+        _restantSword.text = (_playerInfos.points - 10000).ToString();
         if((_playerInfos.points - 10000)<0){
             _restantSword.text = "Pas assez de points";
+        }
+    }
+
+    private void BuyShotgun(){
+        if((_playerInfos.points - 100)>=0){
+          currentWeapon.weaponInfos.owned = true;
+        _uiAchete.SetActive(true);
+        _uiPending.SetActive(false);
+        _uiShotgun.SetActive(false);
+        _uiHandgun.SetActive(false);
+        _uiEpee.SetActive(false);  
+        _playerInfos.points = _playerInfos.points - 100;
+        }
+        
+    }
+
+    private void BuyHandgun(){
+        if((_playerInfos.points - 50)>=0){
+          currentWeapon.weaponInfos.owned = true;
+        _uiAchete.SetActive(true);
+        _uiPending.SetActive(false);
+        _uiShotgun.SetActive(false);
+        _uiHandgun.SetActive(false);
+        _uiEpee.SetActive(false);  
+        _playerInfos.points = _playerInfos.points - 50;
+        }
+    }
+
+    private void BuySword(){
+        if((_playerInfos.points - 10000)>=0){
+          currentWeapon.weaponInfos.owned = true;
+        _uiAchete.SetActive(true);
+        _uiPending.SetActive(false);
+        _uiShotgun.SetActive(false);
+        _uiHandgun.SetActive(false);
+        _uiEpee.SetActive(false);  
+        _playerInfos.points = _playerInfos.points - 10000;
         }
     }
 }

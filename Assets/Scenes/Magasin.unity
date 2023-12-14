@@ -13765,8 +13765,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2916995178506831533, guid: b542110061ca9a04690bb5f1b8c9f79d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740421363562723076}
   m_SourcePrefab: {fileID: 100100000, guid: b542110061ca9a04690bb5f1b8c9f79d, type: 3}
+--- !u!1 &740421363562723075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2916995178506831533, guid: b542110061ca9a04690bb5f1b8c9f79d,
+    type: 3}
+  m_PrefabInstance: {fileID: 740421363562723074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &740421363562723076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740421363562723075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a131501efb02994f9780d7d79384658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfos: {fileID: 11400000, guid: edcc96ec21d87344c9d3eaceb3977f54, type: 2}
+  firearm:
+    bullet: {fileID: 0}
+    attackInfos: {fileID: 0}
+    weaponTip: {fileID: 0}
+  lethalWeapon:
+    hitbox: {fileID: 0}
+    attackInfos: {fileID: 0}
+    contactParticle: {fileID: 0}
+  audios:
+    drop: {fileID: 0}
+    pickup: {fileID: 0}
+    fire: {fileID: 0}
+    contact: {fileID: 0}
+  trigger: {fileID: 0}
 --- !u!1 &919132147630651789
 GameObject:
   m_ObjectHideFlags: 0
@@ -14499,6 +14536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8204d0cfc1e97da4aae9e6da3676ff0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInfos: {fileID: 0}
   _uiPending: {fileID: 1668690240}
   _uiAchete: {fileID: 1305546701}
   _uiShotgun: {fileID: 1032599765}
@@ -14512,6 +14550,10 @@ MonoBehaviour:
   _prixHandgun: {fileID: 1261109088}
   _restantHandgun: {fileID: 1070167601}
   _btnHandgun: {fileID: 1647375268}
+  _pointsSword: {fileID: 0}
+  _prixSword: {fileID: 0}
+  _restantSword: {fileID: 0}
+  _btnSword: {fileID: 0}
 --- !u!1001 &7169612884270959050
 PrefabInstance:
   m_ObjectHideFlags: 0
