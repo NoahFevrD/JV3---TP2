@@ -206,8 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 995e0c2ff2711024c9f15e5deb7cd3ac, type: 3}
-  - {fileID: 8300000, guid: 08268b0e3a0794449bbb91cc075e0801, type: 3}
+  - {fileID: 8300000, guid: 4372e7516bc0f504f88c2270deccec21, type: 3}
+  - {fileID: 8300000, guid: 24b70a224b790a34d8560d20c5518700, type: 3}
   audioSource: {fileID: 4154669538951252122}
 --- !u!1 &904712774874678195
 GameObject:
@@ -510,7 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b184de89f41884bb7baac94c1c17a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 59e682f7d47c31a47958ad17c5044468, type: 3}
+  - {fileID: 8300000, guid: d4afbcc7ed82a3a4da9096c63b1d0de0, type: 3}
+  - {fileID: 8300000, guid: 4add0328522346b4c946f378ba861be1, type: 3}
   audioSource: {fileID: 2638536886446145668}
 --- !u!1 &1704027715719152877
 GameObject:
@@ -683,7 +686,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackInfos: {fileID: 0}
-  isBullet: 0
 --- !u!65 &5122527420050108962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1329,7 +1331,7 @@ Transform:
   - {fileID: 7849170329269490336}
   - {fileID: 651488046848103264}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7661407772414792056
 Animator:
@@ -1434,7 +1436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9840d3bb031d73488ea4cd68a1010c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  critical: 0
   player: {fileID: 0}
   enemy: {fileID: 3182496741379125180}
   boss: {fileID: 0}
@@ -1932,7 +1933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b184de89f41884bb7baac94c1c17a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 2b4ce3b6572cf8543b10aa0936716618, type: 3}
+  - {fileID: 8300000, guid: fd9dc42d6e1c8d04ea052459cd53c345, type: 3}
+  - {fileID: 8300000, guid: e328d6be4dd547d458b532b307775e56, type: 3}
   audioSource: {fileID: 5733351096667340760}
 --- !u!1 &6956277315327726062
 GameObject:
@@ -2265,7 +2269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b184de89f41884bb7baac94c1c17a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 995e0c2ff2711024c9f15e5deb7cd3ac, type: 3}
+  - {fileID: 8300000, guid: 08268b0e3a0794449bbb91cc075e0801, type: 3}
   audioSource: {fileID: 658128067463626022}
 --- !u!1 &8426138228653988567
 GameObject:
