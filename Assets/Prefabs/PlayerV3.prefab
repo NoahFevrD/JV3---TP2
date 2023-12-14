@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 6917373663886245829}
   - component: {fileID: 731738639504287652}
   - component: {fileID: 3205692987796715586}
+  - component: {fileID: 1873232579000572802}
   m_Layer: 30
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -760,12 +761,12 @@ MonoBehaviour:
       m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: Integer
-      m_Id: 
+      m_Id: 708947d5-3a3d-4f1e-80ab-cbe3e572a16f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 
+        m_Id: cfef84f4-6d1d-4187-a949-fd8da7c969c1
         m_Path: <XRHMD>/trackingState
         m_Interactions: 
         m_Processors: 
@@ -793,6 +794,50 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_HasMigratedActions: 1
+--- !u!114 &1873232579000572802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126428333290164053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &6690652031159547783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9840d3bb031d73488ea4cd68a1010c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  critical: 0
   player: {fileID: 6023979702168709929}
   enemy: {fileID: 0}
   boss: {fileID: 0}

@@ -11,12 +11,9 @@ public class Hurtbox : MonoBehaviour
     // -------------------------
 
     [Header("Hurtbox")]
-    [SerializeField] bool critical = false;
-    [Space(5)]
-
     [SerializeField] PlayerController player;
     [SerializeField] EnemyController enemy;
-    [SerializeField] PlayerController boss;
+    [SerializeField] BossController boss;
 
     [SerializeField] GameObject floatyText;
 
@@ -28,6 +25,9 @@ public class Hurtbox : MonoBehaviour
 
         if(GetComponent<EnemyController>() != null)
         enemy = GetComponent<EnemyController>();
+
+        if(GetComponent<BossController>() != null)
+        boss = GetComponent<BossController>();
     }
 
     public void SendDamageInfos(AttackInfos infos)
@@ -53,6 +53,6 @@ public class Hurtbox : MonoBehaviour
 
         // Boss
         else if(boss != null)
-        {}
+        boss.TakeDamage(infos);
     }
 }
