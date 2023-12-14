@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
         if(playerInfos.teleportOnStart)
         transform.position = playerInfos.startPos;
 
-        //Instantiate(playerInfos.currentWeapon., weaponSpawn.position, weaponSpawn.rotation);
+        if(playerInfos.weaponOnStart)
+        Instantiate(playerInfos.currentWeapon.weaponPrefab, weaponSpawn.position, weaponSpawn.rotation);
     }
 
     void SetScreenUI()
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
         // Timer
         SetTimer();
         screenUi.timerBool = true;
+        
         for(int i = 0;i < screenUi.stopTimerScenes.Length;i++)
         {
             if(screenUi.stopTimerScenes[i] == SceneManager.GetActiveScene().name)
