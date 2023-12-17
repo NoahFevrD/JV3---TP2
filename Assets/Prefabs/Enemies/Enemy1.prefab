@@ -686,6 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackInfos: {fileID: 0}
+  triggerParticle: {fileID: 0}
 --- !u!65 &5122527420050108962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1331,7 +1332,7 @@ Transform:
   - {fileID: 7849170329269490336}
   - {fileID: 651488046848103264}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7661407772414792056
 Animator:
@@ -1399,7 +1400,8 @@ MonoBehaviour:
     attackInfos: {fileID: 11400000, guid: b1872a21047232e4fb62258cdcec0acb, type: 2}
     center: {x: 0, y: 1, z: 2.5}
     size: {x: 1, y: 1, z: 1}
-  deathParticle: {fileID: 0}
+  deathParticle: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7,
+    type: 3}
   animator: {fileID: 0}
   animationTrigger:
     idle: Idle

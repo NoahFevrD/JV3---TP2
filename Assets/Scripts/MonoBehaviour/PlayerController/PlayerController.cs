@@ -86,7 +86,10 @@ public class PlayerController : MonoBehaviour
         transform.position = playerInfos.startPos;
 
         if(playerInfos.weaponOnStart)
-        Instantiate(playerInfos.currentWeapon.weaponPrefab, weaponSpawn.position, weaponSpawn.rotation);
+        {
+            var prefab = Instantiate(playerInfos.currentWeapon.weaponPrefab, weaponSpawn.position, weaponSpawn.rotation);
+            prefab.name = playerInfos.currentWeapon.name;
+        }
     }
 
     void SetScreenUI()
@@ -115,12 +118,7 @@ public class PlayerController : MonoBehaviour
             screenUi.timerBool = false;
         }
     }
-
-    public void TeleportPlayer(Vector3 position)
-    {
-        transform.position = position;
-    }
-
+    
     // Update Functions
     // -------------------------
 
@@ -215,8 +213,8 @@ public class PlayerController : MonoBehaviour
         playerInfos.health = 0;
         audios.death.PlayRandomAudio();
 
-        // idk bro
-        yield return new WaitForSeconds(0);
-      
+        // Load Ship Scene
+        yield return new WaitForSeconds(1.5f);
+        levelManager.LoadAsynchScene("SceneVaisseau");
     }
 }

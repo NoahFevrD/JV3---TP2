@@ -33,7 +33,8 @@ public class SpawnPrefabs : MonoBehaviour
         for(int i = 0;i < spawnsPrefab.Length;i++)
         {
             Quaternion rotation = quaternion.Euler(spawnsPrefab[i].rotation);
-            Instantiate(spawnsPrefab[i].prefab, spawnsPrefab[i].position, rotation);
+            var prefab = Instantiate(spawnsPrefab[i].prefab, spawnsPrefab[i].position, rotation);
+            prefab.name = spawnsPrefab[i].prefab.name + i;
         }
     }
 
@@ -42,7 +43,8 @@ public class SpawnPrefabs : MonoBehaviour
         if(index >= 0 && index < spawnsPrefab.Length)
         {
             Quaternion rotation = quaternion.Euler(spawnsPrefab[index].rotation);
-            Instantiate(spawnsPrefab[index].prefab, spawnsPrefab[index].position, rotation);
+            var prefab = Instantiate(spawnsPrefab[index].prefab, spawnsPrefab[index].position, rotation);
+            prefab.name = spawnsPrefab[index].prefab.name;
         }
 
         else

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaterRise : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WaterRise : MonoBehaviour
 
     [Header("Water Rise")]
     [SerializeField] WaterStat waterStat;
+    [SerializeField] UnityEvent onWaterLower;
     Animator animator;
 
     // -------------------------
@@ -20,14 +22,30 @@ public class WaterRise : MonoBehaviour
     {
         if(GetComponent<Weapon>() == null)
         {
-            if(waterStat.alreadylowered)
-            animator.SetTrigger("Lowered");
+            if(GetComponent<Animator>() != null)
+            animator = GetComponent<Animator>();
 
-            else if(!waterStat.alreadylowered && waterStat.lowerWater)
+            if(waterStat.alreadyLowered)
+            {
+                animator.SetTrigger("Lowered");
+                onWaterLower.Invoke();
+            }
+
+            else if(!waterStat.alreadyLowered && waterStat.lowerWater)
             {
                 animator.SetTrigger("Lower");
-                waterStat.alreadylowered = true;
+                waterStat.alreadyLowered = true;
+                onWaterLower.Invoke();
             }
+        }
+
+        else
+        {
+            PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+            Weapon weapon = GetComponent<Weapon>();
+
+            if(playerController.playerInfos.currentWeapon == weapon.weaponInfos.weaponPrefab)
+            Destroy(gameObject);
         }
     }
 

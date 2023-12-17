@@ -59,8 +59,6 @@ public class AcheteWeapon : MonoBehaviour
 
         // Call Functions
         EndUI();
-
-        Invoke("BuyWeapon", 5);
     }
 
     private void EndUI()
@@ -126,8 +124,10 @@ public class AcheteWeapon : MonoBehaviour
     {
         // Set Variables
         _playerInfos.currentWeapon = currentWeapon.weaponInfos;
-        purchase.Play();
         currentWeapon.weaponInfos.owned = true;
+
+        // Play Audio
+        purchase.Play();
 
         // Call Functions
         AlreadyOwned();
