@@ -91,6 +91,7 @@ public class LevelManager : MonoBehaviour
         // Load Next Scene
         scene.allowSceneActivation = true;
         loadingCanvas.GetComponent<CanvasGroup>().DOFade(0, uiFadeDuration);
+        loadingBar.value = 0;
         ChangePlayerPostion(oldScene, sceneName);
     }
 

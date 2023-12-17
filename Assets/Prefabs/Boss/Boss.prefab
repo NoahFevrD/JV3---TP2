@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 2108566431385106486}
   - component: {fileID: 2404514870171644115}
   - component: {fileID: 14217893802172755}
-  - component: {fileID: 668192311955655887}
+  - component: {fileID: 3590229306635558413}
   - component: {fileID: 178076352906042791}
   - component: {fileID: 2120220142241547740}
   m_Layer: 31
@@ -1602,8 +1602,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!135 &668192311955655887
-SphereCollider:
+--- !u!65 &3590229306635558413
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1621,8 +1621,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 2.5, z: 0}
+  m_Size: {x: 3, y: 4, z: 4}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!54 &178076352906042791
 Rigidbody:
   m_ObjectHideFlags: 0

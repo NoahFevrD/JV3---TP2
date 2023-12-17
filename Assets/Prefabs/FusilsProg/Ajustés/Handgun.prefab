@@ -755,17 +755,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponInfos: {fileID: 11400000, guid: 7d1bccf28f55ce840a0f1680633bb5b0, type: 2}
-  sceneManager: {fileID: 0}
   firearm:
     bullet: {fileID: 7887577078642727075, guid: e79c46f99f3a6a547aedda9da385a8c8,
       type: 3}
-    attackInfos: {fileID: 11400000, guid: 18223a5353f45374e974470dc111acdc, type: 2}
+    attackInfos: {fileID: 11400000, guid: 8f713003357496141a91aba707f0327f, type: 2}
     weaponTip: {fileID: 3909824822585199346}
   lethalWeapon:
     hitbox: {fileID: 0}
     attackInfos: {fileID: 0}
     contactParticle: {fileID: 0}
   ownedOnGrab: 0
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
   shootInterval: 0.5
   audios:
     drop: {fileID: 0}
@@ -848,9 +850,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6458338099115185545}
-  m_LocalRotation: {x: 0.6087616, y: -0, z: -0, w: 0.7933532}
-  m_LocalPosition: {x: -0.0597793, y: -0.08015054, z: -0.39112887}
-  m_LocalScale: {x: 0.7245852, y: 0.724585, z: 0.724585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7959629647453546349}

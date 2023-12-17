@@ -50,12 +50,12 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool isInvincible;
+    bool dead = false;
 
     [Header("Player Controller")]
     public PlayerInfos playerInfos;
     [SerializeField] LevelManager levelManager;
     [SerializeField] Transform weaponSpawn;
-    [Space(5)]
 
     [Header("Components")]
 
@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
     {
         // Set Variables
         playerInfos.player = this;
+
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
         // Call Functions
         TeleportOnStart();
@@ -198,7 +200,7 @@ public class PlayerController : MonoBehaviour
         // Set Variables
         playerInfos.health -= playerInfos.RoundDamage(infos.damage, playerInfos.defense, -.025f);
 
-        if(playerInfos.health <= 0)
+        if(playerInfos.health <= 0 && !dead)
         StartCoroutine("Death");
 
         // Play Animation & Audio
@@ -210,7 +212,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Death()
     {
+        // Set Variables
+        dead = true;
         playerInfos.health = 0;
+
         audios.death.PlayRandomAudio();
 
         // Load Ship Scene
