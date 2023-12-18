@@ -20,19 +20,26 @@ public class PlayerInfos : ScriptableObject
 
     [Header("Start Position")]
     public Vector3 startPos;
+    public Quaternion startRotation;
     [HideInInspector]
     public bool teleportOnStart;
 
     [Header("Player's Info")]
     public int health;
+
+    [HideInInspector]
     public float maxHealth;
+    public float defaultMaxHealth;
     public int points;
     public float timeAlive;
 
     [Header("Level")]
     public int currentLevel = 1;
     public int experience;
+    
+    [HideInInspector]
     public int nextLevelExp;
+    public int defaultNextLevelExp;
     public float levelRatio;
     [Space(5)]
 

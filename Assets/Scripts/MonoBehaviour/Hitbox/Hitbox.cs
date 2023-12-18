@@ -10,6 +10,8 @@ public class Hitbox : MonoBehaviour
 
     [Header("Hitbox")]
     public AttackInfos attackInfos;
+    public GameObject triggerParticle;
+    public RandomAudio randomAudio;
 
     // -------------------------
     // Functions
@@ -21,6 +23,12 @@ public class Hitbox : MonoBehaviour
         if(other.GetComponent<Hurtbox>() != null)
         {
             other.GetComponent<Hurtbox>().SendDamageInfos(attackInfos);
+
+            if(triggerParticle != null)
+            Instantiate(triggerParticle, transform.position, triggerParticle.transform.rotation);
+
+            if(randomAudio != null)
+            randomAudio.PlayRandomAudio();
 
             if(GetComponent<Bullet>() != null)
             GetComponent<Bullet>().Destroy();

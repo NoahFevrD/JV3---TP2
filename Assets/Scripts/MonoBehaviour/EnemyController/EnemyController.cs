@@ -219,8 +219,6 @@ public class EnemyController : MonoBehaviour
         if(!stopEverything && !navMeshAgent.isStopped)
         animator.SetTrigger(animationTrigger.idle);
 
-        Debug.Log(navMeshAgent.isStopped);
-
         chasingPlayer = false;
         navMeshAgent.isStopped = true;
     }

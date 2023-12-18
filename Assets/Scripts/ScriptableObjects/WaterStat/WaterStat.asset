@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaterStat
   m_EditorClassIdentifier: 
   lowerWater: 0
-  alreadylowered: 0
+  alreadyLowered: 0

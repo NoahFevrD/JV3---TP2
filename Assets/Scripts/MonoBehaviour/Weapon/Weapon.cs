@@ -52,9 +52,6 @@ public class Weapon : MonoBehaviour
     public WeaponInfos weaponInfos;
     [Space(5)]
 
-    public SceneExtManager sceneManager;
-    [Space(5)]
-
     [SerializeField] Firearm firearm;
     [Space(5)]
 
@@ -87,6 +84,21 @@ public class Weapon : MonoBehaviour
         // Set Variables
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody>();
+
+        // Lethal Weapon
+        if(lethalWeapon.hitbox != null)
+        {
+            Hitbox hitbox = lethalWeapon.hitbox.GetComponent<Hitbox>();
+
+            if(lethalWeapon.attackInfos != null)
+            hitbox.attackInfos = lethalWeapon.attackInfos;
+
+            if(lethalWeapon.contactParticle != null)
+            hitbox.triggerParticle = lethalWeapon.contactParticle;
+
+            if(audios.contact != null)
+            hitbox.randomAudio = audios.contact;
+        }
     }
 
     void OnEnable()
@@ -133,13 +145,13 @@ public class Weapon : MonoBehaviour
         if(weaponInfos.owned)
         player.playerInfos.currentWeapon = weaponInfos;
         
-        audios.pickup.PlayRandomAudio();
+        //audios.pickup.PlayRandomAudio();
     }
 
     public void OnDrop()
     {
         // Remove currentItem in Hand Script
         isGrabbed = false;
-        audios.drop.PlayRandomAudio();
+        //audios.drop.PlayRandomAudio();
     }
 }

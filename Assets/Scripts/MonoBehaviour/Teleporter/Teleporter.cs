@@ -30,15 +30,26 @@ public class Teleporter : MonoBehaviour
         // If other has XROrigin, Load Scene
         if(other.GetComponent<XROrigin>() != null)
         {
-            // Set Variables
-            other.GetComponent<PlayerController>().isInvincible = true;
-
             // Call Functions
-            if(sceneName != null)
-            levelManager.LoadAsynchScene(sceneName);
+            if(sceneName != "")
+            {
+                other.GetComponent<PlayerController>().isInvincible = true;
+                levelManager.LoadAsynchScene(sceneName);
+                
+            }
+        }
+    }
 
-            else
-            other.GetComponent<PlayerController>().TeleportPlayer(position);
+    private void OnTriggerStay(Collider other)
+    {
+        // If other has XROrigin, Teleport at Coords
+        if(other.GetComponent<XROrigin>() != null)
+        {
+            if(sceneName == "")
+            {
+                other.transform.position = position;
+                Debug.Log("Nuh uh");
+            }
         }
     }
 }

@@ -13,16 +13,20 @@ MonoBehaviour:
   m_Name: PlayerInfos
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  currentWeapon: BaseGun
-  startPos: {x: 0, y: 0, z: 0}
+  weaponOnStart: 0
+  currentWeapon: {fileID: 11400000, guid: 7ca3664ed8f4e204cb72299439bdb68b, type: 2}
+  startPos: {x: -37.75, y: 3, z: -21.5}
+  startRotation: {x: 0, y: 0.6087614, z: 0, w: 0.7933533}
   teleportOnStart: 0
   health: 30
   maxHealth: 30
-  points: 200
-  timeAlive: 32.318268
-  currentLevel: 2
-  experience: 5
-  nextLevelExp: 23
+  defaultMaxHealth: 30
+  points: 0
+  timeAlive: 28.987745
+  currentLevel: 1
+  experience: 0
+  nextLevelExp: 20
+  defaultNextLevelExp: 20
   levelRatio: 1.15
   levelCap: 20
   healthBonus: 3

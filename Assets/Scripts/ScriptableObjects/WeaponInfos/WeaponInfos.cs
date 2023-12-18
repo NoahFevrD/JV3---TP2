@@ -17,7 +17,4 @@ public class WeaponInfos : ScriptableObject
     public string weaponName;
     public bool owned = false;
     public int price;
-
-    public int requiredFavors;
-    public int discountPrice;
 }

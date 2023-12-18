@@ -60,9 +60,6 @@ public class MainMenu : MonoBehaviour
         gameStartCanvas.DOFade(0, fadeDuration);
         yield return new WaitForSeconds(fadeDuration);
 
-        SoundManager soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-        soundManager.StartCoroutine("PlayAudio");
-
         mainMenuAnimator.SetTrigger("Open");
     }
 

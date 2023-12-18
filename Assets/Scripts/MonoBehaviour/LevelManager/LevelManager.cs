@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine.UI;
+using Unity.Mathematics;
+using UnityEngine.EventSystems;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,13 +15,19 @@ public class LevelManager : MonoBehaviour
     // -------------------------
 
     [System.Serializable]
+    public class SceneTransform
+    {
+        public Vector3 position;
+        public Quaternion rotation;
+    }
+
+    [System.Serializable]
     public class SceneStartPosition
     {
         [Header("Start Position")]
-        public Vector3 shipPos;
-        public Vector3 shopPos;
-        public Vector3 dungeonPos;
-        public Vector3 bossPos;
+        public SceneTransform shipTransform;
+        public SceneTransform shopTransform;
+        public SceneTransform dungeonTransform;
     }
 
     // -------------------------
@@ -65,11 +73,12 @@ public class LevelManager : MonoBehaviour
     public async void LoadAsynchScene(string sceneName)
     {
         // Set Variables
+        Scene oldScene = SceneManager.GetActiveScene();
         var scene = SceneManager.LoadSceneAsync(sceneName);
+
+        // Loading
         scene.allowSceneActivation = false;
         loadingCanvas.GetComponent<CanvasGroup>().DOFade(1, uiFadeDuration);
-
-        Scene oldScene = SceneManager.GetActiveScene();
 
         do
         {
@@ -82,47 +91,62 @@ public class LevelManager : MonoBehaviour
         // Load Next Scene
         scene.allowSceneActivation = true;
         loadingCanvas.GetComponent<CanvasGroup>().DOFade(0, uiFadeDuration);
-        ChangePlayerPostion(oldScene);
+        loadingBar.value = 0;
+        ChangePlayerPostion(oldScene, sceneName);
     }
 
-    void ChangePlayerPostion(Scene oldScene)
+    void ChangePlayerPostion(Scene oldScene, string sceneName)
     {
         // Set Variables
         GameObject player = GameObject.Find("Player");
         Scene currentScene = SceneManager.GetActiveScene();
         playerInfos.teleportOnStart = false;
-        playerInfos.weaponOnStart = true;
+        playerInfos.weaponOnStart = false;
 
-        if(currentScene.name == "SceneExterieure")
+        if(sceneName == "SceneExterieure")
         {
             // Set Variables
             Vector3 startPos = Vector3.zero;
+            Quaternion startRotation = Quaternion.Euler(Vector3.zero);
             playerInfos.weaponOnStart = true;
 
             if(oldScene.name == "MainMenu")
-            startPos = startPosition.shipPos;
+            {
+                startPos = startPosition.shipTransform.position;
+                startRotation = startPosition.shipTransform.rotation;
+            }
 
             if(oldScene.name == "SceneVaisseau")
-            startPos = startPosition.shipPos;
+            {
+                startPos = startPosition.shipTransform.position;
+                startRotation = startPosition.shipTransform.rotation;
+            }
 
             if(oldScene.name == "Fin")
-            startPos = startPosition.shipPos;
+            {
+                startPos = startPosition.shipTransform.position;
+                startRotation = startPosition.shipTransform.rotation;
+            }
 
             if(oldScene.name == "Magasin")
-            startPos = startPosition.shopPos;
-
-            if(oldScene.name == "SceneBoss")
-            startPos = startPosition.bossPos;
+            {
+                startPos = startPosition.shopTransform.position;
+                startRotation = startPosition.shopTransform.rotation;
+            }
 
             if(oldScene.name == "Dungeon")
-            startPos = startPosition.dungeonPos;
+            {
+                startPos = startPosition.dungeonTransform.position;
+                startRotation = startPosition.dungeonTransform.rotation;
+            }
 
             // Change Player Coords
             playerInfos.startPos = startPos;
+            playerInfos.startRotation = startRotation;
             playerInfos.teleportOnStart = true;
         }
 
-        if(currentScene.name == "SceneBoss" && currentScene.name == "Dungeon")
+        if(sceneName == "SceneBoss" || sceneName == "Dungeon")
         playerInfos.weaponOnStart = true;
     }
 

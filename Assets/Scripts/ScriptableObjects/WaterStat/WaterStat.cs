@@ -11,5 +11,5 @@ public class WaterStat : ScriptableObject
 
     [Header("Water Stat")]
     public bool lowerWater;
-    public bool alreadylowered;
+    public bool alreadyLowered;
 }

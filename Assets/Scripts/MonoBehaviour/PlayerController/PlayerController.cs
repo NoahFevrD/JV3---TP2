@@ -50,12 +50,12 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool isInvincible;
+    bool dead = false;
 
     [Header("Player Controller")]
     public PlayerInfos playerInfos;
     [SerializeField] LevelManager levelManager;
     [SerializeField] Transform weaponSpawn;
-    [Space(5)]
 
     [Header("Components")]
 
@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
         // Set Variables
         playerInfos.player = this;
 
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
         // Call Functions
         TeleportOnStart();
         SetScreenUI();
@@ -86,7 +88,10 @@ public class PlayerController : MonoBehaviour
         transform.position = playerInfos.startPos;
 
         if(playerInfos.weaponOnStart)
-        Instantiate(playerInfos.currentWeapon.weaponPrefab, weaponSpawn.position, weaponSpawn.rotation);
+        {
+            var prefab = Instantiate(playerInfos.currentWeapon.weaponPrefab, weaponSpawn.position, weaponSpawn.rotation);
+            prefab.name = playerInfos.currentWeapon.name;
+        }
     }
 
     void SetScreenUI()
@@ -115,12 +120,7 @@ public class PlayerController : MonoBehaviour
             screenUi.timerBool = false;
         }
     }
-
-    public void TeleportPlayer(Vector3 position)
-    {
-        transform.position = position;
-    }
-
+    
     // Update Functions
     // -------------------------
 
@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
         // Set Variables
         playerInfos.health -= playerInfos.RoundDamage(infos.damage, playerInfos.defense, -.025f);
 
-        if(playerInfos.health <= 0)
+        if(playerInfos.health <= 0 && !dead)
         StartCoroutine("Death");
 
         // Play Animation & Audio
@@ -212,11 +212,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Death()
     {
+        // Set Variables
+        dead = true;
         playerInfos.health = 0;
+
         audios.death.PlayRandomAudio();
 
-        // idk bro
-        yield return new WaitForSeconds(0);
-      
+        // Load Ship Scene
+        yield return new WaitForSeconds(1.5f);
+        levelManager.LoadAsynchScene("SceneVaisseau");
     }
 }
