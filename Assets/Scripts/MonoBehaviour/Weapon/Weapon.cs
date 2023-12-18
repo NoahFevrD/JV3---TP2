@@ -60,6 +60,7 @@ public class Weapon : MonoBehaviour
     [Header("Grab Behaviour")]
     [SerializeField] bool ownedOnGrab;
     [SerializeField] UnityEvent onGrab;
+    bool alreadyGrabbed;
 
     [Header("Shot Behaviour")]
     [SerializeField] float shootInterval;
@@ -117,6 +118,7 @@ public class Weapon : MonoBehaviour
     {
         if(firearm.bullet != null && isGrabbed && canShoot)
         {
+            canShoot = false;
             var bullet = Instantiate(firearm.bullet, firearm.weaponTip.position, firearm.weaponTip.rotation);
             bullet.GetComponent<Hitbox>().attackInfos = firearm.attackInfos;
             audios.fire.PlayRandomAudio();
@@ -137,7 +139,12 @@ public class Weapon : MonoBehaviour
     {
         // Set currentItem in Hand Script
         isGrabbed = true;
-        onGrab.Invoke();
+
+        if(!alreadyGrabbed)
+        {
+            onGrab.Invoke();
+            alreadyGrabbed = true;
+        }
 
         if(ownedOnGrab)
         weaponInfos.owned = true;

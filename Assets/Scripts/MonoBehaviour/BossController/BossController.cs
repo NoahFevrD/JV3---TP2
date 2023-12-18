@@ -392,6 +392,8 @@ public class BossController : MonoBehaviour
         playerInfos.ExpGain(exp);
         playerInfos.player.MoneyUp(points);
 
+        CancelInvoke("Scream");
+
         StopCoroutine("BiteAttack");
         StopCoroutine("TailAttack");
         StopCoroutine("ProjectileAttack");

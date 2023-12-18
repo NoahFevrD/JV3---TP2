@@ -687,6 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackInfos: {fileID: 0}
   triggerParticle: {fileID: 0}
+  randomAudio: {fileID: 0}
 --- !u!65 &5122527420050108962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1332,7 +1333,7 @@ Transform:
   - {fileID: 7849170329269490336}
   - {fileID: 651488046848103264}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7661407772414792056
 Animator:
@@ -1389,7 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5397e3c361d163843bd73da74a13ce28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 35
   exp: 4
   points: 20
   stabAttack:
@@ -1441,8 +1442,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 3182496741379125180}
   boss: {fileID: 0}
-  floatyText: {fileID: 4554561823788569566, guid: 66c209f83ea839b499cf193e95154ed6,
-    type: 3}
+  floatyText: {fileID: 0}
 --- !u!54 &7303290294778709627
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -146,7 +146,7 @@ public class LevelManager : MonoBehaviour
             playerInfos.teleportOnStart = true;
         }
 
-        if(sceneName == "SceneBoss" || sceneName == "Dungeon")
+        if(sceneName == "SceneBossFight" || sceneName == "Dungeon")
         playerInfos.weaponOnStart = true;
     }
 

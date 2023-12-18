@@ -126,6 +126,8 @@ public class AcheteWeapon : MonoBehaviour
         _playerInfos.currentWeapon = currentWeapon.weaponInfos;
         currentWeapon.weaponInfos.owned = true;
 
+        _playerInfos.player.MoneyUp(-currentWeapon.weaponInfos.price);
+
         // Play Audio
         purchase.Play();
 

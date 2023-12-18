@@ -250,7 +250,6 @@ public class EnemyController : MonoBehaviour
         randomPosition.z = randomPosition.y;
         randomPosition.y = centerOfRadius.y;
 
-        Debug.Log(randomPosition);
         return randomPosition; 
     }
 
@@ -262,6 +261,7 @@ public class EnemyController : MonoBehaviour
         // Set Variables
         stopEverything = true;
         health -= playerInfos.RoundDamage(attackInfos.damage, playerInfos.strength, .15f);
+        Debug.Log(health);
         stunTime = attackInfos.stunTime;
 
         // Call Functions
@@ -286,6 +286,8 @@ public class EnemyController : MonoBehaviour
         dead = true;
 
         // Call Functions
+        StopCoroutine("LoseHealth");
+        
         playerInfos.ExpGain(exp);
         playerInfos.player.MoneyUp(points);
 
