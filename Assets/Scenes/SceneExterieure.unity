@@ -1889,6 +1889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8955,13 +8960,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.43018842, g: 0.745283, b: 0.14397174, a: 1}
-  deepColor: {r: 0.36464867, g: 0.5188676, b: 0.2274476, a: 1}
+  shallowColor: {r: 0.43018812, g: 0.745283, b: 0.14397144, a: 1}
+  deepColor: {r: 0.36464834, g: 0.5188676, b: 0.2274473, a: 1}
   colorDepth: 1.91
   horizonColor: {r: 0.79716986, g: 1, b: 0.8140723, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30168775, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30168745, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0

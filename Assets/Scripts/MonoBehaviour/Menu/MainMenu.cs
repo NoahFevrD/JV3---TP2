@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     // -------------------------
 
     [SerializeField] Settings settings;
+    LevelManager levelManager;
 
     [Header("Animation")]
     [SerializeField] float fadeDuration;
@@ -38,6 +39,9 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        // Set Variables
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
         // Call Functions
         SetSettings();
         StartCoroutine("OnGameStart");
@@ -106,5 +110,11 @@ public class MainMenu : MonoBehaviour
         canvasGroup.DOFade(0, fadeDuration);
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        // Call Functions
+        levelManager.LoadAsynchScene(sceneName);
     }
 }

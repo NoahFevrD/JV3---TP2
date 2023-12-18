@@ -48,11 +48,11 @@ public class Hurtbox : MonoBehaviour
         player.TakeDamage(infos);
 
         // Enemy
-        else if(enemy != null)
+        if(enemy != null)
         enemy.TakeDamage(infos);
 
         // Boss
-        else if(boss != null)
+        if(boss != null)
         boss.TakeDamage(infos);
     }
 }
