@@ -118,9 +118,10 @@ public class Weapon : MonoBehaviour
     {
         if(firearm.bullet != null && isGrabbed && canShoot)
         {
+            canShoot = false;
             var bullet = Instantiate(firearm.bullet, firearm.weaponTip.position, firearm.weaponTip.rotation);
             bullet.GetComponent<Hitbox>().attackInfos = firearm.attackInfos;
-            //audios.fire.PlayRandomAudio();
+            audios.fire.PlayRandomAudio();
 
             Invoke("CanShot", shootInterval);
         }

@@ -15161,7 +15161,17 @@ PrefabInstance:
     - target: {fileID: 2120220142241547740, guid: ece157ff9de146d40824ef4ad2d68d16,
         type: 3}
       propertyPath: health
-      value: 400
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120220142241547740, guid: ece157ff9de146d40824ef4ad2d68d16,
+        type: 3}
+      propertyPath: firstAttackCooldown.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120220142241547740, guid: ece157ff9de146d40824ef4ad2d68d16,
+        type: 3}
+      propertyPath: firstAttackCooldown.y
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2120220142241547740, guid: ece157ff9de146d40824ef4ad2d68d16,
         type: 3}
